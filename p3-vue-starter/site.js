@@ -35,11 +35,11 @@ const vue_app = new Vue({
             movies: []
 
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
-            var title = "Nicks Top 8 Movies"
+            var title = 'Nicks Top 8 Movies',
 
-            var owner = "Nicolas Buono"
+            var owner = 'Nicolas Buono',
 
-            var github = "https://github.com/NickWebdesign2/is219Buonoe-p3"
+            var github = 'https://github.com/NickWebdesign2/is219Buonoe-p3'
       },
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
