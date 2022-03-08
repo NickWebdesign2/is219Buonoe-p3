@@ -1,6 +1,6 @@
-/* SITE.JS: THIS FILE CONTAINS THE METHODS/FUNCTIONS AND VARIABLES CONTROLLING YOUR SITE
+SITE.JS: THIS FILE CONTAINS THE METHODS/FUNCTIONS AND VARIABLES CONTROLLING YOUR SITE
 //
-*/
+
 
 /* NOTE: MOVIES.JSON CONTAINS A LIST OF MOVIES AND ACCOMPANYING METADATA
 //
@@ -32,16 +32,77 @@ const vue_app = new Vue({
       },
       data: {
             // This holds your movies.json data.
-            movies: []
+            movies: [],
 
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
-            var title = 'Nicks Top 8 Movies',
-
-            var owner = 'Nicolas Buono',
-
-            var github = 'https://github.com/NickWebdesign2/is219Buonoe-p3'
+            title: "IMDB + Nicks Top 8 Movies",
+            owner: "Nick",
+            github: " https://github.com/NickWebdesign2",
       },
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-      }
-})
+            makeTextDate(dateArray) {
+                  makeTextDate(dateArray)
+                  {
+                        var year = dateArray[0];
+                        var month = dateArray[1];
+                        var day = dateArray[2];
+
+                        if (month == 1) {
+                              month = 'January';
+                        } else if (month == 2) {
+                              month = 'February';
+                        } else if (month == 3) {
+                              month = 'March';
+                        } else if (month == 4) {
+                              month = 'April';
+                        } else if (month == 5) {
+                              month = 'May';
+                        } else if (month == 6) {
+                              month = 'June';
+                        } else if (month == 7) {
+                              month = 'July';
+                        } else if (month == 8) {
+                              month = 'August';
+                        } else if (month == 9) {
+                              month = 'September';
+                        } else if (month == 10) {
+                              month = 'October';
+                        } else if (month == 11) {
+                              month = 'November';
+                        } else if (month == 12) {
+                              month = 'December';
+                        }
+                        var dateFormat = '';
+                        dateFormat = dateFormat + month + ' ' + day + ', ' + year;
+                        return dateFormat;
+                  },
+
+                  like(index){
+                        this.movies[index].likes += 1;
+
+                  },
+
+                  dislike(index){
+                        this.movies[index].dislikes -= 1;
+
+                  },
+
+                  posterClick(index){
+                        if ( this.movies[index].posterindex < (this.movies[index].posters.length - 1)  ) {
+                              this.movies[index].posterindex += 1;
+                        } else {
+                              this.movies[index].posterindex = 0;
+                        }
+                  },
+
+                  timeText(minutes){
+                        var hours = Math.floor(minutes / 60)
+                        var realMin = minutes % 60
+
+                        var hoursMins = '';
+                        hoursMins = hours + 'h' + ' ' + realMin + 'm';
+
+                        return hoursMins;
+            }
+      })
